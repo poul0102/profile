@@ -7,7 +7,6 @@
   <title>SANGTAEK.DEV - TASTE & HUMANITY</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -25,124 +24,13 @@
   <style>
     @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
-    :root {
-      --deep-navy: #0f172a;
-      --moss-green: #607246;
-      --text-white: #f8fafc;
-    }
-
     body {
-      margin: 0;
       font-family: 'Pretendard', sans-serif;
-      background-color: var(--deep-navy);
-      color: var(--text-white);
     }
 
-    .navbar {
-      background-color: rgba(15, 23, 42, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-    }
-
-    .nav-logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-white);
-      text-decoration: none;
-      letter-spacing: 1px;
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-link {
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      padding-bottom: 4px;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--text-white);
-      border-bottom: 2px solid var(--moss-green);
-    }
-
-    .hamburger {
-      display: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .hamburger .bar {
-      width: 25px;
-      height: 3px;
-      background-color: var(--text-white);
-      border-radius: 3px;
-      transition: all 0.3s ease-in-out;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-menu {
-        position: absolute;
-        top: 60px;
-        left: -100%;
-        flex-direction: column;
-        background-color: rgba(15, 23, 42, 0.98);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s ease-in-out;
-        padding: 2rem 0;
-        gap: 1.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .nav-menu.active {
-        left: 0;
-      }
-    }
-
+    /* 오디오 이퀄라이저 애니메이션만 유지 */
     .eq-bar {
       transition: height 0.15s ease;
-    }
-
-    .eq-bar-1 {
-      height: 30%;
-    }
-
-    .eq-bar-2 {
-      height: 60%;
-    }
-
-    .eq-bar-3 {
-      height: 40%;
-    }
-
-    .eq-bar-4 {
-      height: 80%;
     }
 
     .playing .eq-bar-1 {
@@ -173,23 +61,32 @@
   </style>
 </head>
 
-<body>
+<body class="bg-[#0f172a] text-[#f8fafc]">
 
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">SANGTAEK.DEV</a>
+  <nav class="sticky top-0 z-[1000] bg-[#0f172a]/95 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
-      <div class="hamburger" id="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+      <a href="index.html" class="text-xl font-bold tracking-widest text-white">SANGTAEK.DEV</a>
 
-      <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item"><a href="index.html" class="nav-link">MAIN</a></li>
-        <li class="nav-item"><a href="storyGrowth.html" class="nav-link">STORY & GROWTH</a></li>
-        <li class="nav-item"><a href="strengths.html" class="nav-link">CORE STRENGTHS</a></li>
-        <li class="nav-item"><a href="tasteHumanity.html" class="nav-link active">TASTE & HUMANITY</a></li>
+      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-1 focus:outline-none">
+        <span class="w-6 h-0.5 bg-white rounded-full"></span>
+        <span class="w-6 h-0.5 bg-white rounded-full"></span>
+        <span class="w-6 h-0.5 bg-white rounded-full"></span>
+      </button>
+
+      <ul id="nav-menu"
+        class="hidden md:flex gap-10 absolute md:relative top-[60px] md:top-0 left-0 w-full md:w-auto bg-[#0f172a]/98 md:bg-transparent flex-col md:flex-row items-center py-8 md:py-0 border-b md:border-0 border-white/10 transition-all duration-300">
+        <li><a href="index.html"
+            class="text-sm font-medium text-slate-400 hover:text-white border-b-2 border-transparent hover:border-moss-500 transition-all">MAIN</a>
+        </li>
+        <li><a href="storyGrowth.html"
+            class="text-sm font-medium text-slate-400 hover:text-white border-b-2 border-transparent hover:border-moss-500 transition-all">STORY
+            & GROWTH</a></li>
+        <li><a href="strengths.html"
+            class="text-sm font-medium text-slate-400 hover:text-white border-b-2 border-transparent hover:border-moss-500 transition-all">CORE
+            STRENGTHS</a></li>
+        <li><a href="tasteHumanity.html"
+            class="text-sm font-medium text-white border-b-2 border-moss-500 transition-all">TASTE & HUMANITY</a></li>
       </ul>
     </div>
   </nav>
@@ -218,12 +115,12 @@
             </p>
             <div class="bg-navy-900 border border-navy-800 rounded-xl p-4 flex items-center gap-4">
               <div id="visualizer"
-                class="w-14 h-14 bg-gradient-to-tr from-moss-600 to-navy-800 rounded-lg flex items-center justify-center text-moss-300 font-serif relative overflow-hidden shadow-inner group">
+                class="w-14 h-14 bg-gradient-to-tr from-moss-600 to-navy-800 rounded-lg flex items-center justify-center text-moss-300 relative overflow-hidden shadow-inner">
                 <div class="flex items-end gap-1 h-6 mt-2">
-                  <span class="w-1 bg-moss-300 eq-bar eq-bar-1"></span>
-                  <span class="w-1 bg-moss-300 eq-bar eq-bar-2"></span>
-                  <span class="w-1 bg-moss-300 eq-bar eq-bar-3"></span>
-                  <span class="w-1 bg-moss-300 eq-bar eq-bar-4"></span>
+                  <span class="w-1 bg-moss-300 eq-bar eq-bar-1 h-[30%]"></span>
+                  <span class="w-1 bg-moss-300 eq-bar eq-bar-2 h-[60%]"></span>
+                  <span class="w-1 bg-moss-300 eq-bar eq-bar-3 h-[40%]"></span>
+                  <span class="w-1 bg-moss-300 eq-bar eq-bar-4 h-[80%]"></span>
                 </div>
               </div>
               <div class="flex-1 min-w-0">
@@ -294,19 +191,27 @@
   </section>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("nav-menu");
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
 
-      hamburger.addEventListener("click", () => navMenu.classList.toggle("active"));
-      document.querySelectorAll(".nav-link").forEach(link => link.addEventListener("click", () => navMenu.classList.remove("active")));
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("hidden");
+      navMenu.classList.toggle("flex");
+    });
+
+    document.querySelectorAll("#nav-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 768) {
+          navMenu.classList.add("hidden");
+          navMenu.classList.remove("flex");
+        }
+      });
     });
 
     function togglePlayState() {
       const audio = document.getElementById("bgmAudio");
       const icon = document.getElementById("playIcon");
       const visualizer = document.getElementById("visualizer");
-
       if (audio.paused) {
         audio.play();
         icon.className = "fas fa-pause";
