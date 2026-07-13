@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANGTAEK.DEV - CORE STRENGTHS</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 200: '#b1c5d4', 300: '#8ba6b9', 800: '#1e293b', 900: '#0f172a', 950: '#0b1120' },
+            moss: { 300: '#a3b18a', 400: '#8b9a74', 500: '#607246', 600: '#4a5935' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* =========================================
+       요청하신 네비게이션 바 CSS (수정 없이 원본 그대로 삽입) 
+       ========================================= */
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+    :root {
+      --deep-navy: #0f172a;
+      /* 메인 배경색 */
+      --moss-green: #607246;
+      /* 포인트 색상 */
+      --text-white: #f8fafc;
+      /* 글자색 */
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background-color: var(--deep-navy);
+      color: var(--text-white);
+    }
+
+    /* 네비게이션 바 전체 컨테이너 */
+    .navbar {
+      background-color: rgba(15, 23, 42, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+
+    /* 로고 디자인 */
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-white);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    /* 메뉴 리스트 (데스크탑) */
+    .nav-menu {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding-bottom: 4px;
+    }
+
+    /* 마우스 오버 및 현재 페이지(active) 강조 */
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text-white);
+      border-bottom: 2px solid var(--moss-green);
+    }
+
+    /* 햄버거 메뉴 버튼 (모바일용, 기본은 숨김) */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger .bar {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-white);
+      border-radius: 3px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* 모바일 반응형 (768px 이하) */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        flex-direction: column;
+        background-color: rgba(15, 23, 42, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* active 클래스가 붙으면 메뉴가 화면에 슬라이드 인 */
+      .nav-menu.active {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">SANGTAEK.DEV</a>
+
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">MAIN</a>
+        </li>
+        <li class="nav-item">
+          <a href="storyGrowth.html" class="nav-link">STORY & GROWTH</a>
+        </li>
+        <li class="nav-item">
+          <a href="strengths.html" class="nav-link active">CORE STRENGTHS</a>
+        </li>
+        <li class="nav-item">
+          <a href="tasteHumanity.html" class="nav-link">TASTE & HUMANITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="strength" class="min-h-[calc(100vh-80px)] flex items-center py-12 relative z-10">
+    <div class="max-w-6xl mx-auto px-6 w-full">
+      <div class="text-center mb-16">
+        <span class="text-moss-400 text-xs md:text-sm font-semibold tracking-widest uppercase">Core Strengths</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white mt-3">
+          소중한 가치를 함께 나눌 <span class="text-moss-300">3가지 연결 고리</span>
+        </h2>
+        <p class="text-sm text-navy-300 mt-4 max-w-xl mx-auto">
+          단순히 기능만 구현하는 코더가 아닌, 팀을 건강하게 만들고 비즈니스를 유연하게 지탱할 핵심 강점입니다.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="group relative bg-navy-900 border border-navy-800/80 rounded-2xl p-8 hover:border-moss-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-moss-600/20 border border-moss-400/30 flex items-center justify-center text-moss-300 text-xl mb-6 group-hover:bg-moss-500 group-hover:text-white transition-all duration-300">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3 class="text-xl font-normal text-white mb-4">
+              유연한 백엔드
+            </h3>
+            <p class="text-navy-300 text-sm leading-relaxed font-light">
+              단순히 DB 테이블 조인과 API 전송을 넘어서, 프론트엔드가 데이터를 렌더링하고 상태 관리를 처리하는 과정을 적극적으로 이해합니다. 이는 기획 충돌과 소통 비용을 획기적으로 줄여주는
+              윤활유가 됩니다.
+            </p>
+          </div>
+          <span
+            class="text-xs text-moss-400 font-semibold tracking-wider mt-8 group-hover:text-moss-300 transition-colors">
+            #협업의_윤활유 <i class="fas fa-arrow-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+          </span>
+        </div>
+
+        <div
+          class="group relative bg-navy-900 border border-navy-800/80 rounded-2xl p-8 hover:border-moss-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-moss-600/20 border border-moss-400/30 flex items-center justify-center text-moss-300 text-xl mb-6 group-hover:bg-moss-500 group-hover:text-white transition-all duration-300">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="text-xl font-normal text-white mb-4">
+              성장 스펀지
+            </h3>
+            <p class="text-navy-300 text-sm leading-relaxed font-light">
+              완벽한 지식보다는 끊임없이 학습하는 메타인지를 신뢰합니다. AI 환경의 폭발적인 성장과 트렌드를 빠르게 모니터링하고, 필요할 때는 새로운 도구를 주저 없이 프로젝트에 도입하여 실현해 냅니다.
+            </p>
+          </div>
+          <span
+            class="text-xs text-moss-400 font-semibold tracking-wider mt-8 group-hover:text-moss-300 transition-colors">
+            #무한학습_메카니즘 <i class="fas fa-arrow-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+          </span>
+        </div>
+
+        <div
+          class="group relative bg-navy-900 border border-navy-800/80 rounded-2xl p-8 hover:border-moss-500/40 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-moss-600/20 border border-moss-400/30 flex items-center justify-center text-moss-300 text-xl mb-6 group-hover:bg-moss-500 group-hover:text-white transition-all duration-300">
+              <i class="fas fa-fire"></i>
+            </div>
+            <h3 class="text-xl font-normal text-white mb-4">
+              밀도 높은 몰입가
+            </h3>
+            <p class="text-navy-300 text-sm leading-relaxed font-light">
+              쉽게 타오르고 빠르게 식지 않습니다. 스포츠 경기의 후반전 짜릿한 역전승을 바라보듯, 복잡한 인프라 에러 앞에서도 포기하지 않고 끈기 있게 파고듭니다. 일과 삶의 균형을 유지하며 지속 가능한
+              에너지를 가꿉니다.
+            </p>
+          </div>
+          <span
+            class="text-xs text-moss-400 font-semibold tracking-wider mt-8 group-hover:text-moss-300 transition-colors">
+            #스포츠_끈기_마인드셋 <i class="fas fa-arrow-right ml-1 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-link").forEach(link =>
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+        })
+      );
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANGTAEK.DEV - STORY & GROWTH</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 200: '#b1c5d4', 300: '#8ba6b9', 800: '#1e293b', 900: '#0f172a', 950: '#0b1120' },
+            moss: { 300: '#a3b18a', 400: '#8b9a74', 500: '#607246', 600: '#4a5935' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* =========================================
+       요청하신 네비게이션 바 CSS (수정 없이 원본 그대로 삽입) 
+       ========================================= */
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+    :root {
+      --deep-navy: #0f172a;
+      /* 메인 배경색 */
+      --moss-green: #607246;
+      /* 포인트 색상 */
+      --text-white: #f8fafc;
+      /* 글자색 */
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background-color: var(--deep-navy);
+      color: var(--text-white);
+    }
+
+    /* 네비게이션 바 전체 컨테이너 */
+    .navbar {
+      background-color: rgba(15, 23, 42, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+
+    /* 로고 디자인 */
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-white);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    /* 메뉴 리스트 (데스크탑) */
+    .nav-menu {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding-bottom: 4px;
+    }
+
+    /* 마우스 오버 및 현재 페이지(active) 강조 */
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text-white);
+      border-bottom: 2px solid var(--moss-green);
+    }
+
+    /* 햄버거 메뉴 버튼 (모바일용, 기본은 숨김) */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger .bar {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-white);
+      border-radius: 3px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* 모바일 반응형 (768px 이하) */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        flex-direction: column;
+        background-color: rgba(15, 23, 42, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* active 클래스가 붙으면 메뉴가 화면에 슬라이드 인 */
+      .nav-menu.active {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">SANGTAEK.DEV</a>
+
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">MAIN</a>
+        </li>
+        <li class="nav-item">
+          <a href="storyGrowth.html" class="nav-link active">STORY & GROWTH</a>
+        </li>
+        <li class="nav-item">
+          <a href="strengths.html" class="nav-link">CORE STRENGTHS</a>
+        </li>
+        <li class="nav-item">
+          <a href="tasteHumanity.html" class="nav-link">TASTE & HUMANITY</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="about"
+    class="min-h-[calc(100vh-80px)] flex items-center py-12 px-6 w-full max-w-6xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 w-full">
+      <div class="lg:col-span-5 flex flex-col justify-between">
+        <div>
+          <span class="text-moss-400 text-xs md:text-sm font-semibold tracking-widest uppercase">STORY & GROWTH</span>
+          <h2 class="text-3xl md:text-4xl font-light text-white mt-3 mb-6">
+            부족함을 인정하는 것,<br>
+            성장의 첫 출발선이었습니다
+          </h2>
+        </div>
+        <div class="hidden lg:block relative p-6 bg-navy-950/40 border border-navy-800/60 rounded-xl">
+          <p class="text-sm italic text-navy-300 leading-relaxed">
+            "인디 음악이 주는 깊은 솔직함처럼, 내 개발 철학 역시 나의 부족함을 솔직하게 진단하는 곳에서 탄생했습니다."
+          </p>
+          <div class="mt-4 flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-moss-400"></div>
+            <span class="text-xs text-moss-300 font-semibold uppercase tracking-widest">Sincere attitude</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 space-y-8 text-navy-200 leading-relaxed text-sm md:text-base font-light">
+        <p>
+          처음부터 완전무결한 백엔드 아키텍처를 설계할 수 있는 사람은 없다고 믿습니다. 저 또한 여전히 채워야 할 지식이 많습니다. 하지만 저는 <strong
+            class="font-semibold text-white">"모르는 것을 빠르게 채우는 몰입의 관성"</strong>을 가지고 있습니다.
+        </p>
+        <p>
+          최근 수료한 부트캠프는 저에게 단순한 코딩 능력을 넘어, 밤을 지새우며 팀원들과 에러 로그를 분석하는 끈기와 치열함을 알려준 성장의 요람이었습니다. 매일 밤 코드를 지우고 다시 짜기를 반복하며,
+          서버가 단순히 데이터를 내려주는 곳이 아니라 사용자 경험과 인공지능이라는 거대한 퍼즐 조각을 엮는 핵심 축임을 배웠습니다.
+        </p>
+
+        <div class="border-l-4 border-moss-500 pl-6 my-8 py-2 bg-moss-600/10 rounded-r-lg">
+          <h4 class="font-semibold text-white text-base mb-1">성장 스펙트럼의 확장</h4>
+          <p class="text-sm text-navy-300">
+            백엔드에만 머무르지 않고, 화면 단(프론트엔드)의 렌더링 최적화를 고민하고 최근 개발 생태계의 패러다임이 되는 AI 기술을 적극 스터디하는 유연함까지 품

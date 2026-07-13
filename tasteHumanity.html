@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANGTAEK.DEV - TASTE & HUMANITY</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 200: '#b1c5d4', 300: '#8ba6b9', 400: '#64748b', 800: '#1e293b', 900: '#0f172a', 950: '#0b1120' },
+            moss: { 300: '#a3b18a', 400: '#8b9a74', 500: '#607246', 600: '#4a5935' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+    :root {
+      --deep-navy: #0f172a;
+      --moss-green: #607246;
+      --text-white: #f8fafc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background-color: var(--deep-navy);
+      color: var(--text-white);
+    }
+
+    .navbar {
+      background-color: rgba(15, 23, 42, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-white);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      padding-bottom: 4px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text-white);
+      border-bottom: 2px solid var(--moss-green);
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .hamburger .bar {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-white);
+      border-radius: 3px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        flex-direction: column;
+        background-color: rgba(15, 23, 42, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+    }
+
+    .eq-bar {
+      transition: height 0.15s ease;
+    }
+
+    .eq-bar-1 {
+      height: 30%;
+    }
+
+    .eq-bar-2 {
+      height: 60%;
+    }
+
+    .eq-bar-3 {
+      height: 40%;
+    }
+
+    .eq-bar-4 {
+      height: 80%;
+    }
+
+    .playing .eq-bar-1 {
+      animation: eq 1s ease-in-out infinite alternate;
+    }
+
+    .playing .eq-bar-2 {
+      animation: eq 0.8s ease-in-out infinite alternate 0.2s;
+    }
+
+    .playing .eq-bar-3 {
+      animation: eq 1.2s ease-in-out infinite alternate 0.4s;
+    }
+
+    .playing .eq-bar-4 {
+      animation: eq 0.9s ease-in-out infinite alternate 0.1s;
+    }
+
+    @keyframes eq {
+      0% {
+        height: 20%;
+      }
+
+      100% {
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">SANGTAEK.DEV</a>
+
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">MAIN</a></li>
+        <li class="nav-item"><a href="storyGrowth.html" class="nav-link">STORY & GROWTH</a></li>
+        <li class="nav-item"><a href="strengths.html" class="nav-link">CORE STRENGTHS</a></li>
+        <li class="nav-item"><a href="tasteHumanity.html" class="nav-link active">TASTE & HUMANITY</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="taste" class="min-h-[calc(100vh-80px)] flex items-center py-12 px-6">
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="text-center mb-16">
+        <span class="text-moss-400 text-xs md:text-sm font-semibold tracking-widest uppercase">Taste & Humanity</span>
+        <h2 class="text-3xl md:text-4xl font-light text-white mt-3">
+          상택의 <span class="text-moss-300">취향 아카이브</span>
+        </h2>
+        <p class="text-sm text-navy-300 mt-4 max-w-lg mx-auto">
+          코드를 끈 뒤에 일상을 채우는 소중한 조각들입니다. 같은 감상을 나누는 사람과는 언제나 멋진 대화가 열려있죠!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-navy-950/60 border border-navy-800/80 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xs font-semibold tracking-wider text-moss-300 uppercase">INDIE MUSIC</span>
+              <i class="fas fa-music text-navy-400"></i>
+            </div>
+            <p class="text-xs text-navy-300 leading-relaxed font-light mb-6">
+              장식되지 않고 묵묵히 본인의 색을 전하는 인디 음악을 사랑합니다. 깊은 밴드 사운드 속에서 코딩의 평화와 몰입을 찾습니다.
+            </p>
+            <div class="bg-navy-900 border border-navy-800 rounded-xl p-4 flex items-center gap-4">
+              <div id="visualizer"
+                class="w-14 h-14 bg-gradient-to-tr from-moss-600 to-navy-800 rounded-lg flex items-center justify-center text-moss-300 font-serif relative overflow-hidden shadow-inner group">
+                <div class="flex items-end gap-1 h-6 mt-2">
+                  <span class="w-1 bg-moss-300 eq-bar eq-bar-1"></span>
+                  <span class="w-1 bg-moss-300 eq-bar eq-bar-2"></span>
+                  <span class="w-1 bg-moss-300 eq-bar eq-bar-3"></span>
+                  <span class="w-1 bg-moss-300 eq-bar eq-bar-4"></span>
+                </div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="text-sm font-semibold text-white truncate">고요한 들판의 바람</h4>
+                <p class="text-xs text-navy-300 truncate">로열티 프리 테스트 BGM</p>
+              </div>
+              <button id="playBtn"
+                class="w-8 h-8 rounded-full bg-moss-500 hover:bg-moss-400 text-white flex items-center justify-center text-xs transition-colors"
+                onclick="togglePlayState()">
+                <i id="playIcon" class="fas fa-play ml-0.5"></i>
+              </button>
+            </div>
+            <audio id="bgmAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop
+              crossorigin="anonymous"></audio>
+          </div>
+        </div>
+
+        <div class="bg-navy-950/60 border border-navy-800/80 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xs font-semibold tracking-wider text-moss-300 uppercase">SPORTS SPECTATOR</span>
+              <i class="fas fa-running text-navy-400"></i>
+            </div>
+            <p class="text-xs text-navy-300 leading-relaxed font-light mb-6">
+              치열하게 90분을 달리고 결국 결실을 맺는 스포츠 경기를 좋아합니다. 끝까지 포기하지 않는 스포츠맨십은 제 개발 인생의 기본 태도가 되었습니다.
+            </p>
+            <div class="bg-navy-900 border border-navy-800 rounded-xl p-4">
+              <div class="flex justify-between text-xs text-navy-300 mb-2">
+                <span>치열한 개발의 흐름</span>
+                <span class="text-moss-400 font-bold">LIVE - 87'</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm font-semibold text-white">백엔드</span>
+                <span class="font-bold text-moss-300 text-base">2 : 1</span>
+                <span class="text-sm font-semibold text-navy-200">프론트엔드</span>
+              </div>
+              <div class="w-full bg-navy-950 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div class="bg-moss-500 h-full w-[85%] rounded-full animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-navy-950/60 border border-navy-800/80 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="text-xs font-semibold tracking-wider text-moss-300 uppercase">TRAVEL LOG</span>
+              <i class="fas fa-compass text-navy-400"></i>
+            </div>
+            <p class="text-xs text-navy-300 leading-relaxed font-light mb-6">
+              아직 많은 세계를 밟아보진 못했지만, 낯선 환경에 던져지는 감각을 좋아합니다. 예기치 않은 여행의 변수를 극복할 때 비로소 성장하는 저를 마주합니다.
+            </p>
+            <div class="bg-navy-900 border border-navy-800 rounded-xl p-4 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">✈️</span>
+                <div class="min-w-0">
+                  <h4 class="text-xs font-semibold text-white truncate">다음 여행 희망 버킷</h4>
+                  <p class="text-[10px] text-navy-300">새로운 시야 수집하기</p>
+                </div>
+              </div>
+              <span
+                class="px-2.5 py-1 bg-moss-600/30 border border-moss-400/30 rounded text-[10px] text-moss-300 uppercase font-mono">READY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      hamburger.addEventListener("click", () => navMenu.classList.toggle("active"));
+      document.querySelectorAll(".nav-link").forEach(link => link.addEventListener("click", () => navMenu.classList.remove("active")));
+    });
+
+    function togglePlayState() {
+      const audio = document.getElementById("bgmAudio");
+      const icon = document.getElementById("playIcon");
+      const visualizer = document.getElementById("visualizer");
+
+      if (audio.paused) {
+        audio.play();
+        icon.className = "fas fa-pause";
+        visualizer.classList.add("playing");
+      } else {
+        audio.pause();
+        icon.className = "fas fa-play ml-0.5";
+        visualizer.classList.remove("playing");
+      }
+    }
+  </script>
+</body>
+
+</html>
